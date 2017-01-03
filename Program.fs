@@ -2,5 +2,9 @@
 
 open Suave;
 
+let cfg = 
+  { defaultConfig with bindings = [ HttpBinding.createSimple HTTP "0.0.0.0" 5000 
+             ] }
+
 [<EntryPoint>]
-startWebServer defaultConfig (Successful.OK "Hello World from F#!")
+startWebServer cfg (Successful.OK "Hello World from F#!")
